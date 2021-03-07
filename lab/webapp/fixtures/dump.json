@@ -1,0 +1,86 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "product_name": "Asus",
+    "description": "",
+    "category": "computers",
+    "leftover": 3,
+    "product_cost": "999.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "product_name": "Microwave",
+    "description": "Dnepryanka-1",
+    "category": "others",
+    "leftover": 2,
+    "product_cost": "500.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "product_name": "Logitech",
+    "description": "Gaming mouse",
+    "category": "mouses",
+    "leftover": 0,
+    "product_cost": "200.32"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "product_name": "Razor",
+    "description": "Gaming keyboard",
+    "category": "keyboards",
+    "leftover": 3,
+    "product_cost": "700.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "product_name": "Marshall",
+    "description": "Headsets for musicians",
+    "category": "headphones",
+    "leftover": 10,
+    "product_cost": "335.55"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "product_name": "iPhone",
+    "description": "Most popular product of 'Apple'",
+    "category": "others",
+    "leftover": 3,
+    "product_cost": "1000.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$WBWQTHcksMse$0i8Q6O+Q3VLJmcfd8BdgAxxN1jOCXrI236p9HcsWQHI=",
+    "last_login": "2021-03-07T10:09:49.638Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-07T10:09:18.189Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
