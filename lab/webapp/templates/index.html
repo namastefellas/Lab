@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<body>
+    {% block menu %}
+    <li><a href="#">Add New Product</a></li>    
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+    <h1>List Of Products</h1>
+        {% if not products %}
+            <h2>There is no products that you are looking for</h2>
+        {% endif %}
+
+        {% for product in products %}
+        <div class="card mb-2" style="width: 18rem;">
+            <div class="card-body mb-2">
+            <h5 class="card-title">{{ product.product_name }}</h5>
+            <h6 class="card-subtitle mb-2">{{ product.category }}</h6>
+            <p class="card-text">{{product.description }}</p>
+            <p class="card-text">{{product.leftover }}</p>
+            <p class="card-text">{{product.product_cost }}</p>
+            </div>    
+        </div>
+        {% endfor %}
+    </div>    
+    {% endblock %}
+</body>
+</html>
