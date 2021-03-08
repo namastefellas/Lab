@@ -47,10 +47,10 @@ def edit_product(request, pk):
     elif request.method == 'POST':
         form = ProductForm(data=request.POST)
         if form.is_valid():
-            product.product_name = form.cleaned_data['product_name'],
-            product.description = form.cleaned_data['description'],
-            product.category = form.cleaned_data['category'],
-            product.leftover = form.cleaned_data['leftover'],
+            product.product_name = form.cleaned_data['product_name']
+            product.description = form.cleaned_data['description']
+            product.category = form.cleaned_data['category']
+            product.leftover = form.cleaned_data['leftover']
             product.product_cost = form.cleaned_data['product_cost']
             product.save()
             return redirect('product_view', pk=product.pk)
