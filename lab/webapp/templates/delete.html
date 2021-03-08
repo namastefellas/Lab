@@ -2,8 +2,8 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
-<h1>Are you sure want to delete product? "{{ product_name }}"?</h1>
-<form method="POST" action="{% url 'guest_delete' product.pk %}">
+<h1>Are you sure want to delete this product?</h1>
+<form method="POST" action="{% url 'product_delete' product.pk %}">
     {% csrf_token %}
         <p><input type="submit" value="Confirm"></p>
         <p><a href="{% url 'index' %}" type="button">Cancel</a></p>

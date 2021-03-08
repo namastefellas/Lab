@@ -17,7 +17,7 @@
             <h6 class="card-subtitle mb-2">Category: {{ product.category }}</h6>
             <p class="card-text">Price: {{ product.product_cost }}</p>
             <a href="{% url 'product_view' product.pk %}">View Details</a>
-            <a href="#"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
+            <a href="{% url 'product_delete' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
             <a href="{% url 'product_edit' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/edit.png"/></a>
             </div>    
         </div>
