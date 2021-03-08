@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<form action="{% url 'add_product' %}" method="post">
+    {% include "product_form.html" with button_text="Add" %}
+</form>
+{% endblock %}

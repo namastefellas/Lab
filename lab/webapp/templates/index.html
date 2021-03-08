@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 <body>
     {% block menu %}
-    <li><a href="#">Add New Product</a></li>    
+    <li><a href="{% url 'add_product' %}">Add New Product</a></li>    
     {% endblock %}
     {% block content %}
     <div class="container">
@@ -14,10 +14,11 @@
         <div class="card mb-2" style="width: 18rem;">
             <div class="card-body mb-2">
             <h5 class="card-title">{{ product.product_name }}</h5>
-            <h6 class="card-subtitle mb-2">{{ product.category }}</h6>
-            <p class="card-text">{{product.description }}</p>
-            <p class="card-text">{{product.leftover }}</p>
-            <p class="card-text">{{product.product_cost }}</p>
+            <h6 class="card-subtitle mb-2">Category: {{ product.category }}</h6>
+            <p class="card-text">Price: {{ product.product_cost }}</p>
+            <a href="{% url 'product_view' product.pk %}">View Details</a>
+            <a href="#"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
+            <a href="{% url 'product_edit' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/edit.png"/></a>
             </div>    
         </div>
         {% endfor %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+<div class="container">
+        <div class="card mb-3" style="width: 18rem;">
+            <div class="card-body mb-2">
+            <h5 class="card-title">{{ product.product_name }}</h5>
+            <h6 class="card-subtitle mb-2">Category: {{ product.category }}</h6>
+            <p class="card-text">{{product.description }}</p>
+            <p class="card-text">Leftover: {{product.leftover }}</p>
+            <p class="card-text">Price: {{product.product_cost }}</p>
+            <a href="{% url 'index' %}">Back to list</a>
+            </div>    
+        </div>
+    </div>
+{% endblock %}    
