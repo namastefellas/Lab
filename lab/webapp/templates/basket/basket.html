@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+{% for basket in baskets %}
+    <p>Name: {{ basket.product_b.product_name }} Price: {{  basket.product_b.product_cost }} Quantity: {{ basket.product_b.leftover}} Total: {{ total_stuff }} </p>
+{% endfor %}
+<p>Total: {{ total }}</p>
+{% endblock %}
