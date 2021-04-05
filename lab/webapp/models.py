@@ -10,7 +10,14 @@ class Product(models.Model):
     category = models.CharField(max_length=100, null=False, blank=False, default='others', choices=category_choice)
     leftover = models.IntegerField(null=False, blank=False)
     product_cost = models.DecimalField(max_digits=7, decimal_places=2)
-
+    order = models.ManyToManyField(
+        'webapp.Order',
+        related_name='products',
+        verbose_name='Order',
+        through='webapp.ProductOrder',
+        through_fields=('product', 'order'),
+        blank=True
+    )
     class Meta:
         db_table = 'products'
         verbose_name = 'Product'
@@ -30,4 +37,33 @@ class Basket(models.Model):
         db_table = 'basket'
         verbose_name = 'Basket'
         verbose_name_plural = 'Baskets'
+
+
+class Order(models.Model):
+    name = models.CharField(null=False, blank=False, max_length=100, verbose_name='User Name')
+    phone = models.IntegerField(null=False, blank=False, verbose_name='Phone Number')
+    adress = models.CharField(null=False, blank=False, max_length=200, verbose_name='Adress')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+
+    class Meta:
+        db_table = 'orders'
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'
+
+
+
+class ProductOrder(models.Model):
+    product = models.ForeignKey(
+        'webapp.Product', 
+        related_name='o_product',
+        on_delete=models.CASCADE,
+        verbose_name='Product'
+        )
+    
+    order = models.ForeignKey(
+        'webapp.Order',
+        related_name='product_o',
+        on_delete=models.CASCADE,
+        verbose_name='Order'
+    )
 
