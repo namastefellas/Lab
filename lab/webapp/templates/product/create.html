@@ -3,6 +3,6 @@
 {% endblock %}
 {% block content %}
 <form action="{% url 'add_product' %}" method="post">
-    {% include "product_form.html" with button_text="Add" %}
+    {% include "partial/product_form.html" with button_text="Add" %}
 </form>
 {% endblock %}

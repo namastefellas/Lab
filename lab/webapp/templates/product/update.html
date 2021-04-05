@@ -4,6 +4,6 @@
 {% block title %}Product Edit{% endblock %}
 {% block content %}
 <form method="POST" action="{% url 'product_edit' product.pk %}">
-    {% include "product_form.html" with button_text="Edit" %}
+    {% include "partial/product_form.html" with button_text="Edit" %}
 </form>
 {% endblock %}

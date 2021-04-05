@@ -8,6 +8,8 @@
     <h1>List Of Products</h1>
         {% if not products %}
             <h2>There is no products that you are looking for</h2>
+        {% else %}
+            {% include "partial/search.html" %}
         {% endif %}
 
         {% for product in products %}
@@ -19,9 +21,11 @@
             <a href="{% url 'product_view' product.pk %}">View Details</a>
             <a href="{% url 'product_delete' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
             <a href="{% url 'product_edit' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/edit.png"/></a>
+            <a href="#">Add To Basket</a>    
             </div>    
         </div>
         {% endfor %}
+        {% include 'partial/pagination.html' %}
     </div>    
     {% endblock %}
 </body>

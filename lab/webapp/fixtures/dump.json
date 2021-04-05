@@ -17,7 +17,7 @@
     "product_name": "Microwave",
     "description": "Dnepryanka-1",
     "category": "others",
-    "leftover": 2,
+    "leftover": 4,
     "product_cost": "500.00"
   }
 },
@@ -30,17 +30,6 @@
     "category": "mouses",
     "leftover": 0,
     "product_cost": "200.32"
-  }
-},
-{
-  "model": "webapp.product",
-  "pk": 4,
-  "fields": {
-    "product_name": "Razor",
-    "description": "Gaming keyboard",
-    "category": "keyboards",
-    "leftover": 3,
-    "product_cost": "700.00"
   }
 },
 {
@@ -66,11 +55,85 @@
   }
 },
 {
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "product_name": "Freezer",
+    "description": "Samsung freezer",
+    "category": "computers",
+    "leftover": 0,
+    "product_cost": "400.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "product_name": "Drone",
+    "description": "",
+    "category": "others",
+    "leftover": 10,
+    "product_cost": "600.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "product_name": "Logitech",
+    "description": "",
+    "category": "mouses",
+    "leftover": 5,
+    "product_cost": "300.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 10,
+  "fields": {
+    "product_name": "Refregirator",
+    "description": "",
+    "category": "others",
+    "leftover": 10,
+    "product_cost": "6.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 11,
+  "fields": {
+    "product_name": "Some Product",
+    "description": "",
+    "category": "others",
+    "leftover": 15,
+    "product_cost": "600.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 12,
+  "fields": {
+    "product_name": "Some Product 2",
+    "description": "",
+    "category": "others",
+    "leftover": 5,
+    "product_cost": "60.00"
+  }
+},
+{
+  "model": "webapp.basket",
+  "pk": 1,
+  "fields": {
+    "product_b": 10,
+    "product_qty": 3
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$WBWQTHcksMse$0i8Q6O+Q3VLJmcfd8BdgAxxN1jOCXrI236p9HcsWQHI=",
-    "last_login": "2021-03-07T10:09:49.638Z",
+    "last_login": "2021-04-05T08:19:09.887Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
