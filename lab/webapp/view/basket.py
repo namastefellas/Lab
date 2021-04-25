@@ -15,6 +15,7 @@ class BasketCreate(View):
             try:
                 basket = Basket.objects.get(product_b__pk=product.pk)
                 basket.product_qty += 1
+                basket.product_qty = product.leftover
                 basket.save()
 
             except Basket.DoesNotExist:
@@ -22,10 +23,9 @@ class BasketCreate(View):
                     product_b=product,
                     product_qty=1
                 )
-            basket.product_b.leftover -= 1
-            basket.product_b.save()
-        else:
-            pass
+            product.leftover -= 1
+            product.save()
+            
         return redirect('index')
 
 
@@ -40,7 +40,7 @@ class BasketView(ListView):
         total = 0
         basket = Basket.objects.all()
         for i in basket:
-            total += i.product_b.product_cost * i.product_b.leftover
+            total += i.product_b.product_cost * i.product_qty
             total_stuff.append({'total_stuff': i, 'total': i.product_qty * i.product_b.product_cost })
         context = super().get_context_data(**kwargs)
         context['total_stuff'] = total_stuff
@@ -57,4 +57,4 @@ class BasketDelete(DeleteView):
         return self.delete(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse('basket_list', kwargs={'pk': self.object.product_b.pk})
+        return reverse('basket_list')

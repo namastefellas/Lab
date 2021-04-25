@@ -3,7 +3,8 @@
 {% endblock %}
 {% block content %}
 {% for basket in total_stuff %}
-    <p>Name: {{ basket.total_stuff.product_b.product_name }} Price: {{  basket.total_stuff.product_b.product_cost }} Quantity: {{ basket.total_stuff.product_b.leftover}} Total: {{ basket.total_stuff.product_qty }} <a href="#">Delete</a></p>
+    <p>Name: {{ basket.total_stuff.product_b.product_name }} Price: {{  basket.total_stuff.product_b.product_cost }} Quantity: {{ basket.total_stuff.product_b.leftover}} Total: {{ basket.total_stuff.product_qty }}</p>
+    <p><a href="{% url 'basket_delete' basket.total_stuff.pk %}">Delete</a></p>
 {% endfor %}
 <p>Total: {{ total }}</p>
 {% endblock %}

@@ -19,6 +19,7 @@ from webapp.view.product import IndexView, ProductView, ProductCreate, ProductUp
 from webapp.view.basket import BasketCreate, BasketView, BasketDelete
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
@@ -28,5 +29,5 @@ urlpatterns = [
     path('product/<int:pk>/delete/', ProductDelete.as_view(), name='product_delete'),
     path('basket/<int:pk>/', BasketCreate.as_view(), name='basket'),
     path('basket/list', BasketView.as_view(), name='basket_list'),
-    path('product/delete/<int:pk>', BasketDelete.as_view(), name='basket_delete')
+    path('basket/delete/product/<int:pk>', BasketDelete.as_view(), name='basket_delete')
 ]
