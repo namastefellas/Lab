@@ -2,9 +2,15 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
+{% if not total_stuff %}
+<h2>Basket Empty</h2>
+{% endif %}
 {% for basket in total_stuff %}
     <p>Name: {{ basket.total_stuff.product_b.product_name }} Price: {{  basket.total_stuff.product_b.product_cost }} Quantity: {{ basket.total_stuff.product_b.leftover}} Total: {{ basket.total_stuff.product_qty }}</p>
-    <p><a href="{% url 'basket_delete' basket.total_stuff.pk %}">Delete</a></p>
+    <p><a href="{% url 'webapp:basket_delete' basket.total_stuff.pk %}">Delete</a></p>
 {% endfor %}
 <p>Total: {{ total }}</p>
+<form action="{% url 'webapp:create_order' %}" method="post">
+    {% include 'partial/product_form.html'  with button_text='Order' %}
+</form>
 {% endblock %}

@@ -3,9 +3,9 @@
 {% endblock %}
 {% block content %}
 <h1>Are you sure want to delete this product?</h1>
-<form method="POST" action="{% url 'product_delete' product.pk %}">
+<form method="POST" action="{% url 'webapp:product_delete' product.pk %}">
     {% csrf_token %}
         <p><input type="submit" value="Confirm"></p>
-        <p><a href="{% url 'index' %}" type="button">Cancel</a></p>
+        <p><a href="{% url 'webapp:index' %}" type="button">Cancel</a></p>
 </form>
 {% endblock %}

@@ -6,7 +6,7 @@
     "product_name": "Asus",
     "description": "",
     "category": "computers",
-    "leftover": 3,
+    "leftover": 38,
     "product_cost": "999.00"
   }
 },
@@ -72,7 +72,7 @@
     "product_name": "Drone",
     "description": "",
     "category": "others",
-    "leftover": 10,
+    "leftover": 34,
     "product_cost": "600.00"
   }
 },
@@ -83,7 +83,7 @@
     "product_name": "Logitech",
     "description": "",
     "category": "mouses",
-    "leftover": 5,
+    "leftover": 60,
     "product_cost": "300.00"
   }
 },
@@ -121,29 +121,31 @@
   }
 },
 {
-  "model": "webapp.basket",
+  "model": "webapp.order",
   "pk": 1,
   "fields": {
-    "product_b": 10,
-    "product_qty": 3
+    "name": "igor",
+    "phone": 550140305,
+    "adress": "some street",
+    "created_at": "2021-04-26T08:43:32.860Z"
   }
 },
 {
-  "model": "auth.user",
-  "pk": 1,
+  "model": "webapp.order",
+  "pk": 10,
   "fields": {
-    "password": "pbkdf2_sha256$216000$WBWQTHcksMse$0i8Q6O+Q3VLJmcfd8BdgAxxN1jOCXrI236p9HcsWQHI=",
-    "last_login": "2021-04-05T08:19:09.887Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@admin.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2021-03-07T10:09:18.189Z",
-    "groups": [],
-    "user_permissions": []
+    "name": "namaste",
+    "phone": 550140305,
+    "adress": "some street",
+    "created_at": "2021-04-26T12:07:19.101Z"
+  }
+},
+{
+  "model": "webapp.productorder",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "order": 10
   }
 }
 ]

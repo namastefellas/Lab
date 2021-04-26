@@ -2,7 +2,7 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
-<form action="{% url 'add_product' %}" method="post">
+<form action="{% url 'webapp:add_product' %}" method="post">
     {% include "partial/product_form.html" with button_text="Add" %}
 </form>
 {% endblock %}

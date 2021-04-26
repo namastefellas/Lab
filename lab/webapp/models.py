@@ -66,4 +66,3 @@ class ProductOrder(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Order'
     )
-

@@ -3,7 +3,7 @@
 {% endblock menu %}
 {% block title %}Product Edit{% endblock %}
 {% block content %}
-<form method="POST" action="{% url 'product_edit' product.pk %}">
+<form method="POST" action="{% url 'webapp:product_edit' product.pk %}">
     {% include "partial/product_form.html" with button_text="Edit" %}
 </form>
 {% endblock %}

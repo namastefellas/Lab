@@ -1,0 +1,102 @@
+[
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Moderators",
+    "permissions": [
+      [
+        "add_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "change_product",
+        "webapp",
+        "product"
+      ],
+      [
+        "delete_product",
+        "webapp",
+        "product"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$WBWQTHcksMse$0i8Q6O+Q3VLJmcfd8BdgAxxN1jOCXrI236p9HcsWQHI=",
+    "last_login": "2021-04-26T12:07:31.055Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-07T10:09:18.189Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$YtjxPRgEoKKa$MglSXxFwVkoho82/oL6vksGOgF3Qa5rcG0NJm3kQTLw=",
+    "last_login": "2021-04-26T11:47:05.135Z",
+    "is_superuser": false,
+    "username": "moder",
+    "first_name": "Moder",
+    "last_name": "",
+    "email": "moder@moder.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-26T11:24:17Z",
+    "groups": [
+      [
+        "Moderators"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$dAwbT2qfcK5R$w3GGXRslBDmo2a8Gj2ctFIxY8+qvCyitAuBsmogINK0=",
+    "last_login": "2021-04-26T11:46:55.191Z",
+    "is_superuser": false,
+    "username": "user",
+    "first_name": "User",
+    "last_name": "",
+    "email": "user@user.user",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-26T11:28:03.191Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$NnxhnF5NXtWh$5SPbQjI6N2gw+EVspq+Qp8UHNxNRu7o7uckxfkx38bI=",
+    "last_login": "2021-04-26T11:34:36.683Z",
+    "is_superuser": false,
+    "username": "qeqw",
+    "first_name": "qeq",
+    "last_name": "",
+    "email": "qeq@qeq.qeq",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-26T11:34:36.208Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
