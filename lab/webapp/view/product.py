@@ -76,3 +76,5 @@ class ProductDelete(DeleteView):
     template_name = 'product/delete.html'
     context_object_name = 'product'
     success_url = reverse_lazy('webapp:index')
+
+

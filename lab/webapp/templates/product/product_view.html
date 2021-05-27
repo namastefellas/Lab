@@ -10,11 +10,15 @@
             <p class="card-text">{{product.description }}</p>
             <p class="card-text">Leftover: {{product.leftover }}</p>
             <p class="card-text">Price: {{product.product_cost }}</p>
-            <a href="{% url 'webapp:product_delete' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
+            {% if perms.webapp.delete_product %}
+                <a href="{% url 'webapp:product_delete' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/trash.png"/></a>
+            {% endif %}
+            {% if perms.webapp.change_product %}
             <a href="{% url 'webapp:product_edit' product.pk %}"><img src="https://img.icons8.com/fluent-systems-filled/25/000000/edit.png"/></a>
+            {% endif %}
             <a href="{% url 'webapp:basket' product.pk %}">Add To Basket</a>    
             <a href="{% url 'webapp:index' %}">Back to list</a>
-            </div>    
+            </div> 
         </div>
     </div>
 {% endblock %}    

@@ -9,7 +9,8 @@ from django.utils.http import urlencode
 
 class OrderCreate(View):
     def post(self, request, *args, **kwargs):
-        basket = Basket.objects.all()
+        session = request.session.get('basket', [])
+        basket = Basket.objects.filter(pk__in=session)
         form = OrderForm(data=request.POST)
         if form.is_valid():
             name = form.cleaned_data.get('name')
@@ -18,13 +19,15 @@ class OrderCreate(View):
             order = Order.objects.create(
                 name=name,
                 adress=adress,
-                phone=phone
+                phone=phone,
+                user=None
             )
             for x in basket:
                 qty = x.product_qty
                 product = x.product_b
                 ProductOrder.objects.create(order=order, product=product)
             basket.delete()
+            request.session['basket'] = []
 
             return redirect('webapp:index')
         else:

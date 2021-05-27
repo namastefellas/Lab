@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 category_choice = [('computers', 'Computers'), ('keyboards', 'Keyboards'), ('others', 'Others'), ('mouses', 'Mouses'), ('headphones', 'Headphones')]
@@ -44,6 +45,14 @@ class Order(models.Model):
     phone = models.IntegerField(null=False, blank=False, verbose_name='Phone Number')
     adress = models.CharField(null=False, blank=False, max_length=200, verbose_name='Adress')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    user = models.ForeignKey(
+        get_user_model(), 
+        on_delete=models.CASCADE, 
+        related_name='user',
+        verbose_name='User',
+        blank=True,
+        null=True
+    )
 
     class Meta:
         db_table = 'orders'

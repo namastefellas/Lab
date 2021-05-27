@@ -24,8 +24,8 @@ class BasketCreate(View):
                     product_qty=1
                 )
                 session.append(basket.id)
-                product.leftover -= 1
-                product.save()
+            product.leftover -= 1
+            product.save()
 
             
             request.session['basket'] = session
@@ -72,6 +72,9 @@ class BasketDelete(DeleteView):
 
     def get(self, request, *args, **kwargs):
         session = request.session.get('basket', [])
+        product = self.get_object().product_b
+        product.leftover += self.get_object().product_qty
+        product.save()
         if self.get_object().pk in session:
             session.remove(self.get_object().pk)
             request.session['basket'] = session

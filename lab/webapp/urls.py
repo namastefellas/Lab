@@ -7,7 +7,6 @@ from webapp.view.order import OrderCreate
 app_name = 'webapp'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('product/<int:pk>', ProductView.as_view(), name='product_view'),
     path('product/create/', ProductCreate.as_view(), name='add_product'),
